@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Disease Prediction{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h2 class="text-center mb-4"><i class="fas fa-stethoscope"></i> Disease Prediction</h2>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Select Disease Type</label>
+                    <select class="form-select" id="diseaseSelect" onchange="changeDisease()">
+                        {% for disease in diseases %}
+                        <option value="{{ disease }}" {% if disease == disease_type %}selected{% endif %}>
+                            {{ disease.title().replace('_', ' ') }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <form method="POST" action="{{ url_for('predict') }}">
+            <input type="hidden" name="disease_type" value="{{ disease_type }}" id="diseaseType">
+            
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-clipboard-list"></i> 
+                        {{ disease_type.title().replace('_', ' ') }} Symptoms
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% for symptom in symptoms %}
+                    <div class="mb-3">
+                        <label class="form-label">{{ symptom.replace('_', ' ').title() }}</label>
+                        <input type="number" class="form-control" name="{{ symptom }}" 
+                               step="0.1" required placeholder="Enter value (0-10 scale)">
+                        <div class="form-text">Enter a value between 0-10 representing symptom severity</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fas fa-bolt"></i> Predict Disease
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function changeDisease() {
+    const select = document.getElementById('diseaseSelect');
+    const disease = select.value;
+    window.location.href = "{{ url_for('predict') }}?disease=" + disease;
+}
+</script>
+{% endblock %}

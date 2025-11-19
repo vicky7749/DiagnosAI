@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiagnosAI - AI-Powered Disease Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-top: 100px;
+            padding: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-stethoscope me-2"></i>
+                DiagnosAI
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="hero-section text-center">
+                    <h1 class="display-4 fw-bold mb-4">DiagnosAI</h1>
+                    <h3 class="mb-4 text-muted">Advanced AI-Powered Disease Prediction System</h3>
+                    <p class="lead mb-5">
+                        Leveraging Machine Learning and Deep Learning for accurate, early disease diagnosis with over 90% prediction accuracy.
+                    </p>
+                    <a href="/predict" class="btn btn-primary btn-lg">
+                        Start Prediction <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supported Diseases Section -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="hero-section">
+                    <h2 class="text-center mb-5">Supported Diseases</h2>
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-syringe fa-3x text-primary mb-3"></i>
+                                <h5>Diabetes</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-virus fa-3x text-danger mb-3"></i>
+                                <h5>Covid</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-lungs fa-3x text-warning mb-3"></i>
+                                <h5>Pneumonia</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-kidneys fa-3x text-success mb-3"></i>
+                                <h5>Kidney Disease</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-ribbon fa-3x text-pink mb-3"></i>
+                                <h5>Breast Cancer</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-brain fa-3x text-info mb-3"></i>
+                                <h5>Alzheimer</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-head-side-brain fa-3x text-purple mb-3"></i>
+                                <h5>Brain Tumor</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="disease-card">
+                                <i class="fas fa-liver fa-3x text-orange mb-3"></i>
+                                <h5>Hepatitis C</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="hero-section">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="fas fa-robot fa-3x text-primary mb-3"></i>
+                                <h4>AI & ML Powered</h4>
+                                <p class="text-muted">Advanced machine learning algorithms for accurate predictions</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                                <h4>Secure & Private</h4>
+                                <p class="text-muted">Your data is encrypted and never shared with third parties</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="fas fa-chart-line fa-3x text-warning mb-3"></i>
+                                <h4>90%+ Accuracy</h4>
+                                <p class="text-muted">High prediction accuracy backed by clinical research</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

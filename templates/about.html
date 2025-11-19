@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}About DiagnosAI{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h1 class="text-center mb-4">About DiagnosAI</h1>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Project Overview</h3>
+                <p class="card-text">
+                    DiagnosAI is a comprehensive web-based disease prediction system leveraging Machine Learning (ML) 
+                    and Deep Learning (DL) to facilitate early and accurate diagnosis. The system supports prediction 
+                    for eight distinct diseases with an average prediction accuracy above 90%.
+                </p>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Supported Diseases</h3>
+                <div class="row">
+                    {% for disease in ['alzheimer', 'brain_tumor', 'covid', 'diabetes', 'hepatitis_c', 'kidney_disease', 'pneumonia', 'breast_cancer'] %}
+                    <div class="col-md-6 mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ disease.title().replace('_', ' ') }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Technology Stack</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Backend</h5>
+                        <ul>
+                            <li>Flask Web Framework</li>
+                            <li>SQLite Database</li>
+                            <li>SQLAlchemy ORM</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Machine Learning</h5>
+                        <ul>
+                            <li>XGBoost</li>
+                            <li>Random Forest</li>
+                            <li>CNN Models</li>
+                            <li>Transfer Learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Key Features</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                            <li>Multi-disease prediction system</li>
+                            <li>User-friendly web interface</li>
+                            <li>Secure user authentication</li>
+                            <li>Report generation and history</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>RESTful API for predictions</li>
+                            <li>High accuracy models (>90%)</li>
+                            <li>Scalable architecture</li>
+                            <li>Medical data privacy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
