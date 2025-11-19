@@ -27,4 +27,5 @@ A comprehensive web-based disease prediction system leveraging Machine Learning 
 1. Clone the repository:
    ```bash
    git clone <https://github.com/vicky7749/DiagnosAI.git>
+
    cd diagnosai
